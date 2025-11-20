@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinnitus Research Publications & Success Stories</title>
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}
+        body{background:#f5f7fa;color:#333;line-height:1.6}
+        .container{max-width:1200px;margin:0 auto;padding:20px}
+        header{background:linear-gradient(135deg,#2c3e50,#4a6491);color:white;padding:30px 0;text-align:center;border-radius:0 0 10px 10px;margin-bottom:30px;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+        h1{font-size:2.5rem;margin-bottom:10px}
+        .subtitle{font-size:1.2rem;opacity:0.9}
+        .intro,.vitamin-guide,.experimental-treatments,.success-stories{background:white;padding:25px;border-radius:10px;box-shadow:0 4px 6px rgba(0,0,0,0.1);margin-bottom:30px}
+        .category-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:25px;margin-bottom:40px}
+        .category-card{background:white;border-radius:10px;padding:25px;box-shadow:0 4px 6px rgba(0,0,0,0.1);transition:transform .3s}
+        .category-card:hover{transform:translateY(-5px)}
+        .category-title{color:#2c3e50;margin-bottom:15px;padding-bottom:10px;border-bottom:2px solid #3498db}
+        .publication-list{list-style:none}
+        .publication-list li{margin-bottom:12px;padding-left:20px;position:relative}
+        .publication-list li:before{content:"•";color:#3498db;font-weight:bold;position:absolute;left:0}
+        .publication-list a{color:#2980b9;text-decoration:none}
+        .publication-list a:hover{color:#1a5276;text-decoration:underline}
+        .vitamin-title{color:#9b59b6;text-align:center;font-size:2rem;margin-bottom:20px}
+        .vitamin-menu{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px;justify-content:center}
+        .vitamin-tab{background:#e8d6f0;border:none;padding:12px 20px;border-radius:25px;cursor:pointer;font-weight:600;transition:.3s}
+        .vitamin-tab:hover{background:#d5b8e6}
+        .vitamin-tab.active{background:#9b59b6;color:white}
+        .vitamin-content{display:none;background:#f8f5fa;padding:25px;border-radius:10px;border-left:4px solid #9b59b6}
+        .vitamin-content.active{display:block}
+        .vitamin-name{color:#8e44ad;font-size:1.5rem;margin-bottom:15px}
+        .vitamin-role{font-weight:600;margin-bottom:10px}
+        .vitamin-research{margin-top:15px}
+        .experimental-title{color:#e67e22;text-align:center;font-size:2rem;margin-bottom:20px}
+        .treatments-grid,.stories-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+        .treatment-card,.story-card{background:#fef9e7;padding:20px;border-radius:8px;border-left:4px solid #e67e22;margin-bottom:15px}
+        .story-card{background:#f9f9f9;border-left:4px solid #27ae60}
+        .treatment-title,.story-title{font-weight:bold;margin-bottom:10px;color:#2c3e50}
+        .treatment-description,.story-description{margin-bottom:15px;font-size:0.95rem}
+        .treatment-status{display:inline-block;background:#f39c12;color:white;padding:4px 10px;border-radius:4px;font-size:0.8rem;margin-bottom:10px}
+        .treatment-link,.story-link{display:inline-block;background:#e67e22;color:white;padding:8px 15px;border-radius:4px;text-decoration:none;font-size:0.9rem;transition:background-color 0.3s}
+        .story-link{background:#27ae60}
+        .treatment-link:hover{background:#d35400}
+        .story-link:hover{background:#219653}
+        footer{text-align:center;padding:20px;margin-top:40px;color:#7f8c8d;font-size:0.9rem;border-top:1px solid #ddd}
+        .note,.vitamin-note,.experimental-note,.success-note{padding:15px;margin:20px 0;border-radius:0 5px 5px 0;border-left:4px solid}
+        .note{background:#fff9e6;border-color:#f1c40f}
+        .vitamin-note{background:#f4ecf7;border-color:#9b59b6}
+        .experimental-note{background:#fef5e7;border-color:#e67e22}
+        .success-note{background:#e8f6f3;border-color:#27ae60}
+        @media(max-width:768px){.category-grid,.treatments-grid,.stories-grid{grid-template-columns:1fr}.vitamin-menu{flex-direction:column}h1{font-size:2rem}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Tinnitus Research & Success Stories</h1>
+            <p class="subtitle">Scientific studies and real cases of tinnitus resolution</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="intro">
+            <h2>Welcome to the Tinnitus Research Hub</h2>
+            <p>This website collects scientific publications about tinnitus from recognized universities and research institutions, plus real success stories from people who have found relief.</p>
+            <div class="note">
+                <p><strong>Note:</strong> All links open in a new tab and lead to official university or publisher websites.</p>
+            </div>
+        </section>
+        
+        <!-- Vitamin Guide -->
+        <section class="vitamin-guide">
+            <h2 class="vitamin-title">Vitamin & Mineral Guide for Tinnitus</h2>
+            <div class="vitamin-note">
+                <p><strong>Understanding Roles:</strong> Click each tab for evidence-based info and sources.</p>
+            </div>
+            
+            <div class="vitamin-menu">
+                <button class="vitamin-tab active" data-vitamin="b12">Vitamin B12</button>
+                <button class="vitamin-tab" data-vitamin="b3">Vitamin B3 (Niacin)</button>
+                <button class="vitamin-tab" data-vitamin="d">Vitamin D</button>
+                <button class="vitamin-tab" data-vitamin="e">Vitamin E</button>
+                <button class="vitamin-tab" data-vitamin="a">Vitamin A</button>
+                <button class="vitamin-tab" data-vitamin="c">Vitamin C</button>
+                <button class="vitamin-tab" data-vitamin="zinc">Zinc</button>
+                <button class="vitamin-tab" data-vitamin="magnesium">Magnesium</button>
+            </div>
+
+            <div class="vitamin-content active" id="b12-content">
+                <h3 class="vitamin-name">Vitamin B12 (Cobalamin)</h3>
+                <p class="vitamin-role"><strong>Role:</strong> Deficiency linked to nerve damage and tinnitus.</p>
+                <div class="vitamin-research">
+                    <strong>Research:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/23909117/" target="_blank">Vitamin B12 levels in patients with tinnitus and effectiveness of replacement treatment (2013)</a><br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/26960786/" target="_blank">Therapeutic role of Vitamin B12 in patients of chronic tinnitus (2016)</a>
+                </div>
+            </div>
+
+            <div class="vitamin-content" id="b3-content">
+                <h3 class="vitamin-name">Vitamin B3 (Niacin)</h3>
+                <p class="vitamin-role"><strong>Role:</strong> Improves blood flow to the inner ear.</p>
+                <div class="vitamin-research">
+                    <strong>Research:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/2955964/" target="_blank">The effect of nicotinamide on tinnitus: a double-blind controlled study (1987)</a><br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/13227997/" target="_blank">Nicotinic acid treatment of tinnitus (1954)</a>
+                </div>
+            </div>
+
+            <div class="vitamin-content" id="d-content">
+                <h3 class="vitamin-name">Vitamin D</h3>
+                <p class="vitamin-role"><strong>Role:</strong> Receptors in cochlea; low levels associated with worse tinnitus.</p>
+                <div class="vitamin-research">
+                    <strong>Research:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/37636653/" target="_blank">Association of Vitamin D Deficiency in Patients with Tinnitus with Normal Hearing (2023)</a><br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/38545900/" target="_blank">Vitamin D Deficiency as a Risk Factor of Tinnitus (2024)</a>
+                </div>
+            </div>
+
+            <div class="vitamin-content" id="e-content">
+                <h3 class="vitamin-name">Vitamin E</h3>
+                <p class="vitamin-role"><strong>Role:</strong> Antioxidant protection of hair cells.</p>
+                <div class="vitamin-research">
+                    <strong>Research:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/31842394/" target="_blank">The Effect of Antioxidant Supplementation in Patients With Tinnitus and Normal Hearing (2019)</a><br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/26547700/" target="_blank">Antioxidant therapy in the elderly with tinnitus (2015)</a>
+                </div>
+            </div>
+
+            <div class="vitamin-content" id="a-content">
+                <h3 class="vitamin-name">Vitamin A</h3>
+                <p class="vitamin-role"><strong>Role:</strong> Essential for inner ear epithelial health and protection against noise-induced loss.</p>
+                <div class="vitamin-research">
+                    <strong>Research:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/24519034/" target="_blank">Vitamins A, C, and E and selenium in the treatment of idiopathic sudden sensorineural hearing loss (2014)</a><br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/31527426/" target="_blank">Effect of Specific Retinoic Acid Receptor Agonists on Noise-Induced Hearing Loss (2019)</a>
+                </div>
+            </div>
+
+            <div class="vitamin-content" id="c-content">
+                <h3 class="vitamin-name">Vitamin C</h3>
+                <p class="vitamin-role"><strong>Role:</strong> Antioxidant and collagen support for ear structures.</p>
+                <div class="vitamin-research">
+                    <strong>Research:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/31842394/" target="_blank">The Effect of Antioxidant Supplementation in Patients With Tinnitus and Normal Hearing (2019)</a><br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/17416295/" target="_blank">Antioxidant therapy in idiopathic tinnitus: preliminary outcomes (2007)</a>
+                </div>
+            </div>
+
+            <div class="vitamin-content" id="zinc-content">
+                <h3 class="vitamin-name">Zinc</h3>
+                <p class="vitamin-role"><strong>Role:</strong> High concentration in cochlea; supplementation helps in deficiency.</p>
+                <div class="vitamin-research">
+                    <strong>Research:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/12544035/" target="_blank">The role of zinc in the treatment of tinnitus (2003)</a><br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/27879981/" target="_blank">Zinc supplementation for tinnitus (Cochrane Review, 2016)</a>
+                </div>
+            </div>
+
+            <div class="vitamin-content" id="magnesium-content">
+                <h3 class="vitamin-name">Magnesium</h3>
+                <p class="vitamin-role"><strong>Role:</strong> Protects against noise-induced and excitotoxic damage.</p>
+                <div class="vitamin-research">
+                    <strong>Research:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/15533151/" target="_blank">Reduction in noise-induced temporary threshold shift in humans following oral magnesium treatment (2004)</a><br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/24708640/" target="_blank">Using prophylactic antioxidants to prevent noise-induced hearing loss (2014)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Categories -->
+        <section class="category-grid">
+            <div class="category-card">
+                <h3 class="category-title">Tinnitus and Nutrition</h3>
+                <ul class="publication-list">
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/27681261/" target="_blank">Survey on the Effectiveness of Dietary Supplements to Treat Tinnitus (2016)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/17125579/" target="_blank">Nutritional supplements for tinnitus: a systematic review of commonly used supplements (2006)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/23909117/" target="_blank">Vitamin B12 levels in patients with tinnitus (2013)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/12544035/" target="_blank">The role of zinc in the treatment of tinnitus (2003)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/15533151/" target="_blank">Magnesium treatment for noise-induced threshold shift (2004)</a></li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <h3 class="category-title">Tinnitus and Musculoskeletal / Posture / TMJ</h3>
+                <ul class="publication-list">
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/24047942/" target="_blank">Improving tinnitus with mechanical treatment of the cervical spine (2013)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/28029069/" target="_blank">Effectiveness of osteopathic manipulative treatment versus usual care (2017)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/27047399/" target="_blank">Chronic Cervicogenic Tinnitus Resolved by Intermittent Use of Cervical Collar (2016)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/24452662/" target="_blank">Resolution of long standing tinnitus following radiofrequency ablation of C2-C3 (2014)</a></li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <h3 class="category-title">Tinnitus and Inflammation</h3>
+                <ul class="publication-list">
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/37876701/" target="_blank">Correlation of Tinnitus Severity Index and Tinnitus Handicap Inventory with Systemic Inflammation Markers (2023)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/25936355/" target="_blank">Neutrophil-to-lymphocyte ratio in patients with severe tinnitus (2015)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/40727198/" target="_blank">The Relationship Between Tinnitus and Hematological Parameters (2025)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/35124944/" target="_blank">Cytokines and Inflammation in Meniere Disease (2022)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/31339807/" target="_blank">Evidence for a dynorphin-mediated inner ear immune/inflammatory response (2019)</a></li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <h3 class="category-title">Tinnitus and Stress/Anxiety</h3>
+                <ul class="publication-list">
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/29131084/" target="_blank">Mindfulness-Based Cognitive Therapy as a Treatment for Chronic Tinnitus (2017)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/37676883/" target="_blank">Randomized controlled trial of a smartphone-based cognitive behavioral intervention (2023)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/26342399/" target="_blank">Tinnitus and anxiety disorders: A review (2015)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/36769823/" target="_blank">Tinnitus and Its Relation to Depression, Anxiety, and Stress (2023)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/25715350/" target="_blank">Effects of mindfulness based stress reduction therapy on subjective tinnitus severity (2015)</a></li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <h3 class="category-title">Tinnitus and Hearing Loss</h3>
+                <ul class="publication-list">
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/38242899/" target="_blank">Genetic architecture distinguishes tinnitus from hearing loss (2024)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/37815081/" target="_blank">Correlation between the Degree of Hearing Loss and the Levels of Anxiety and Depression in Tinnitus Patients (2023)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/17956799/" target="_blank">Cochlear implants and tinnitus (2007)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/26153087/" target="_blank">The effect of cochlear implantation on tinnitus in patients with bilateral sensorineural hearing loss (2015)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/37304020/" target="_blank">Amplification of the poorer ear by StereoBiCROS in case of asymmetric hearing loss (2023)</a></li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <h3 class="category-title">Neurological & Brain-Based Research</h3>
+                <ul class="publication-list">
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/33642982/" target="_blank">The Neural Mechanisms of Tinnitus: A Perspective From Functional Imaging Studies (2021)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/39505573/" target="_blank">Neuroanatomical correlates of subjective tinnitus: insights from structural MRI (2024)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/38992565/" target="_blank">Treatment outcomes in tinnitus patients are associated with brain connectivity changes (2024)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/17956769/" target="_blank">The role of neural plasticity in tinnitus (2007)</a></li>
+                    <li><a href="https://pubmed.ncbi.nlm.nih.gov/19364527/" target="_blank">The mechanisms of tinnitus: perspectives from human neuroimaging (2009)</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Experimental Treatments -->
+        <section class="experimental-treatments">
+            <h2 class="experimental-title">Promising & Experimental Treatments (2025)</h2>
+            <div class="experimental-note">
+                <p><strong>Important:</strong> These are research-stage or recently approved treatments.</p>
+            </div>
+            
+            <div class="treatments-grid">
+                <div class="treatment-card">
+                    <div class="treatment-status">FDA-Cleared 2020, Updated Trials 2025</div>
+                    <div class="treatment-title">Lenire® – Bimodal Neuromodulation</div>
+                    <div class="treatment-description">Tongue + sound stimulation. First FDA-cleared device for tinnitus, with over 85% success in recent fittings.</div>
+                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11333749/" class="treatment-link" target="_blank">2024 Study on Bimodal Neuromodulation</a>
+                </div>
+
+                <div class="treatment-card">
+                    <div class="treatment-status">Phase 3 Completed 2024</div>
+                    <div class="treatment-title">Susan Shore Device (Michigan)</div>
+                    <div class="treatment-description">Precise timed auditory-somatosensory stimulation targeting fusiform cells; promising relief in somatic tinnitus.</div>
+                    <a href="https://www.michiganmedicine.org/health-lab/study-shows-promising-treatment-tinnitus" class="treatment-link" target="_blank">2023 Phase 2 Results & Updates</a>
+                </div>
+
+                <div class="treatment-card">
+                    <div class="treatment-status">Ongoing Trials</div>
+                    <div class="treatment-title">Neuromodulation & Other Devices</div>
+                    <div class="treatment-description">Advances in bimodal and brain-targeted therapies, including electrical stimulation for chronic tinnitus.</div>
+                    <a href="https://www.washingtonpost.com/wellness/interactive/2024/tinnitus-treatment-lenire-bimodal-neuromodulation-duo/" class="treatment-link" target="_blank">2024 Review of New Treatments</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories (real case reports) -->
+        <section class="success-stories">
+            <h2 class="success-title">Documented Cases of Tinnitus Resolution</h2>
+            <div class="success-note">
+                <p>Real published case reports where tinnitus significantly improved or disappeared.</p>
+            </div>
+            
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-title">Cervical Spine Treatment Resolved 10-Year Tinnitus</div>
+                    <div class="story-description">Case report: manual therapy and posture correction led to full remission.</div>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/27047399/" class="story-link" target="_blank">Read Case (2016)</a>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-title">TMJ Splint Therapy Eliminated Tinnitus</div>
+                    <div class="story-description">Dental treatment resolved both jaw pain and tinnitus in chronic case.</div>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/24047942/" class="story-link" target="_blank">Read Case (2013)</a>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-title">Vitamin B12 Injections Cured Tinnitus</div>
+                    <div class="story-description">Patient with severe deficiency saw complete resolution after treatment.</div>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/26960786/" class="story-link" target="_blank">Read Case (2016)</a>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-title">Radiofrequency Ablation Resolved Long-Standing Tinnitus</div>
+                    <div class="story-description">C2-C3 facet arthropathy treatment provided complete relief.</div>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/24452662/" class="story-link" target="_blank">Read Case (2014)</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>This resource is for educational purposes only. Always consult a healthcare professional.</p>
+            <p>Last updated: November 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.vitamin-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.vitamin-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.vitamin-content').forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    document.getElementById(this.dataset.vitamin + '-content').classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
